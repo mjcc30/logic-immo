@@ -16,7 +16,7 @@ app.get("/", (req, res, next) => {
   res.render("home");
 });
 
-app.get('/annonce', (req, res) => {
+app.get('/annonces', (req, res) => {
   fetch(URL_SERVER, {
     headers: { "Content-Type": "application/json" },
   })
@@ -24,7 +24,7 @@ app.get('/annonce', (req, res) => {
       return data.json();
     })
     .then((json) => {
-      res.render("annonce", { annonce: json });
+      res.render("annonces", { annonces: json });
     })
     .catch((err) => console.log(err));
 });
