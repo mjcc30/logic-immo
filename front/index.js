@@ -4,11 +4,12 @@ const fetch = require("node-fetch");
 const path = require("path");
 
 const app = express();
-const URL_SERVER = "http://localhost:3000/";
+const URL_SERVER = "http://localhost:3000";
 const PORT = "4000";
 const hostname = "localhost";
 
 app.set("view engine", "ejs");
+app.use(express.static('public'));
 
 app.get("/", (req, res, next) => {
   res.render("home");
