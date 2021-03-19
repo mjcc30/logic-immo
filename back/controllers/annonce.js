@@ -1,4 +1,6 @@
 
+const Annonce = require("../models/index.js");
+
 const getAnnonce = (req, res, next) => {
   Annonce.find({})
     .then((annonce) => {
