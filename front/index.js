@@ -40,6 +40,17 @@ app.get('/annonce/:id', (req, res) => {
     .catch((err) => console.log(err));
 });
 
+app.get('/modifier/:id', (req, res) => {
+  fetch(`${URL_SERVER}/${req.params.id}`)
+    .then((data) => {
+      return data.json();
+    })
+    .then((json) => {
+      res.render("modifier", { annonce: json });
+    })
+    .catch((err) => console.log(err));
+});
+
 app.get('/create', (req, res) => {
   res.render('addAnnonce');
 })
