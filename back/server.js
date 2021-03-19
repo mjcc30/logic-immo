@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const PORT = 3000;
 const hostname = "127.0.0.1";
+const createRoutes = require("./routes/index.js");
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 
 mongoose.connect("mongodb://localhost:27017/immo");
 
+createRoutes(app);
 
 app.listen(PORT, hostname, () => {
   console.log(`Server running at http://${hostname}:${PORT}/`);
