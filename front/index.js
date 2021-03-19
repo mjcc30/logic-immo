@@ -8,6 +8,7 @@ const URL_SERVER = "http://localhost:3000";
 const PORT = "4000";
 const hostname = "localhost";
 
+app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 
