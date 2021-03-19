@@ -1,6 +1,6 @@
 const URL_SERVER = "http://localhost:3000";
 
-function createAnnonce() {
+function addAnnonce() {
 
   event.preventDefault();
 
